@@ -1,0 +1,1 @@
+This script allows you to run a C file through the preprocessor and save the preprocessed output into another file. It automates the process of preprocessing C code, which can be helpful for various tasks such as code analysis, debugging, or generating modified versions of the code.
