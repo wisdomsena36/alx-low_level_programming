@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Entry points
  *
  * Return: Always 0 (Success)
  */
@@ -14,4 +14,3 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
-	
