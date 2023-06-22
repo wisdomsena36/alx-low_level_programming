@@ -6,7 +6,7 @@ int _isalpha(int);
 int print_sign(int);
 int _abs(int);
 int print_last_digit(int);
-void jack_lower(void);
+void jack_bauer(void);
 void times_tablet(void);
 int add(int, int);
 void print_to_98(int);
