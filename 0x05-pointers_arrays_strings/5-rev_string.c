@@ -10,6 +10,8 @@ void rev_string(char *s)
 {
 	int len;
 	int i;
+	char tmp;
+	int len2;
 
 	len = 0;
 	while (s[len] != '\0')
@@ -17,11 +19,11 @@ void rev_string(char *s)
 		len++;
 	}
 
-	i = len - 1;
-	while (i >= 0)
+	len2 = len - 1;
+	for (i = 0; i < len / 2; i++) 
 	{
-		_putchar(i);
-		i--;
+		tmp = s[i];
+		s[i] = s[len2];
+		s[len2--] = tmp;
 	}
-	_putchar('\n');
 }
