@@ -27,11 +27,11 @@ int _atoi(char *s)
 
 		digit = s[i] - '0';
 		if (digit >= 0 && digit <= 9)
-			res *= 10 + digit;
+			res = res * 10 + digit;
 		else
 			break;
 		i++;
 	}
-	res *= sign;
+	res = res * sign;
 	return (res);
 }
