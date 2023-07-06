@@ -6,7 +6,7 @@
  *
  * Return: the length of the string.
  */
-int strlen(char *s)
+int _strlen(char *s)
 {
 	if (*s == '\0')
 		return (0);
@@ -41,7 +41,7 @@ int is_palindrome(char *s)
 {
 	int length;
 
-	length = strlen(s);
+	length = _strlen(s);
 	if (length <= 1)
 		return (1);
 	return (is_palindrome_helper(s, 0, length - 1));
