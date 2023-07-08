@@ -27,8 +27,12 @@ int main(int argc, char *argv[])
 			}
 			sum += number;
 		}
+		printf("%d\n", sum);
 	}
-	printf("%d\n", sum);
+	else
+	{
+		printf("0\n");
+	}
 
 	return (0);
 }
