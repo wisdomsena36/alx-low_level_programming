@@ -12,27 +12,33 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int sum;
+	char *err_message;
 
+	err_message = "Error";
+	sum = 0;
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			int number;
+			char *current_arg;
 
-			number = atoi(argv[i]);
-			if (number == 0 && argv[i][0] != '0')
+			current_arg = argv[i];
+			while (*current_arg != '\0')
 			{
-				printf("Error\n");
-				return (1);
+				if (*current_arg < '0' || *current_arg > '9')
+				{
+					printf("%s\n", err_message);
+					return (1);
+				}
+				current_arg++;
 			}
-			sum += number;
+			sum += atoi(argv[i]);
 		}
 		printf("%d\n", sum);
 	}
 	else
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 	}
-
 	return (0);
 }
