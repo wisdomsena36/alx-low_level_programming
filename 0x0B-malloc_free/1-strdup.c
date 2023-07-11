@@ -35,6 +35,9 @@ char *_strdup(char *str)
 	if (dup == NULL)
 		return (NULL);
 
+	if (len == 0)
+		return (NULL);
+
 	i = 0;
 	while (i <= len)
 	{
@@ -42,6 +45,5 @@ char *_strdup(char *str)
 		i++;
 	}
 
-	free(dup);
 	return (dup);
 }
