@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _strlen - It finds the length of a string.
+ * _strnlen - It finds the length of a string.
  * @s: The input string.
  *
  * Return: The length of the string.
@@ -14,7 +14,7 @@ int _strnlen(char *s)
 	len = 0;
 	while (s[len] != '\0')
 		len++;
-	return len;
+	return (len);
 }
 
 /**
@@ -41,6 +41,7 @@ char *_strdup(char *str)
 		dup[i] = str[i];
 		i++;
 	}
-	
+
+	free(dup);
 	return (dup);
 }
