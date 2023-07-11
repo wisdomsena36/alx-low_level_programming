@@ -35,15 +35,8 @@ char *_strdup(char *str)
 	if (dup == NULL)
 		return (NULL);
 
-	if (len == 0)
-		return (NULL);
-
-	i = 0;
-	while (i <= len)
-	{
+	for (i = 0; i <= len; i++)
 		dup[i] = str[i];
-		i++;
-	}
 
 	return (dup);
 }
