@@ -130,7 +130,7 @@ int main(int argc, char **argv)
 
 	prod_len = len1 + len2;
 	prod = initialize_array(prod_len);
-	if (prod == NULL)
+	if (!prod)
 		print_error(98);
 
 	multiply_strings(prod, argv[1], argv[2], len1, len2);
