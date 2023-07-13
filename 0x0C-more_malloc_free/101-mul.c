@@ -15,7 +15,7 @@ unsigned int *initialize_array(size_t size)
 	size_t i;
 
 	arr = malloc(sizeof(unsigned int) * size);
-	if (!arr)
+	if (arr == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
