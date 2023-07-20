@@ -29,11 +29,13 @@ int main(int argc, char *argv[])
 		return (2);
 	}
 
-	for (i = 0; i < bytes; i++)
+	i = 0;
+	while (i < bytes)
 	{
 		printf("%.2x", main_address[i]);
 		if (i < bytes - 1)
 			printf(" ");
+		i++;
 	}
 	printf("\n");
 
