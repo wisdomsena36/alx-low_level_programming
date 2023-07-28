@@ -1,5 +1,5 @@
 section .data
-    hello db 'Hello, Holberton', 0
+    hello db 'Hello, Holberton', 0x0A ; 0x0A is the ASCII code for a new line
 
 section .text
     extern printf
