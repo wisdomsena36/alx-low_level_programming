@@ -1,16 +1,16 @@
 section .data
-hello db "Hello, Holberton", 0
-hello_format db "%s", 0
+    hello db 'Hello, Holberton', 0
 
 section .text
-extern printf
+    extern printf
 
-global main
+    global main
+
 main:
-push rbp
-mov rdi, hello_format
-mov rsi, hello
-xor rax, rax
-call printf
-pop rbp
-ret
+    push rbp
+    mov rdi, hello
+    call printf
+    pop rbp
+
+    mov rax, 0
+    ret
