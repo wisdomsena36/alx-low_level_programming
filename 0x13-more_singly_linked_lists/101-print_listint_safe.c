@@ -4,57 +4,60 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - Prints a listint_t linked list (handles loops).
+ * check_for_loop - It checks if a linked list contains a loop.
+ * @head: A pointer to the head of the linked list.
+ *
+ * Return: If the list contains a loop, returns
+ * the loop's starting node. Otherwise, returns NULL.
+ */
+const listint_t *check_for_loop(const listint_t *head)
+{
+	const listint_t *slow = head;
+	const listint_t *fast = head;
+
+	while (slow != NULL && fast != NULL && fast->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+
+		if (slow == fast)
+			return (slow);
+	}
+
+	return (NULL);
+}
+
+/**
+ * print_listint_safe - It prints a listint_t linked list.
  * @head: A pointer to the head of the linked list.
  *
  * Return: The number of nodes in the list.
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow, *fast;
+	const listint_t *loop_start;
 	size_t count = 0;
 
-	slow = head;
-	fast = head;
+	loop_start = check_for_loop(head);
 
-	while (slow != NULL && fast != NULL && fast->next != NULL)
+	if (loop_start == NULL)
 	{
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		slow = slow->next;
-		fast = fast->next->next;
-
-		if (slow == fast)
+		while (head != NULL)
 		{
-			/* List contains a loop, break the loop to avoid infinite loop */
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			break;
-		}
-		count++;
-	}
-
-	if (slow != fast)
-	{
-		/* List does not contain a loop, continue printing */
-		while (slow != NULL)
-		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			slow = slow->next;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 			count++;
 		}
 	}
 	else
 	{
-		/* List contains a loop, stop printing to avoid infinite loop */
-		listint_t *loop_start = (listint_t *)slow;
-		do
-		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			slow = slow->next;
+		do {
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 			count++;
-		} while (slow != loop_start);
-		printf("-> [%p] %d\n", (void *)loop_start, loop_start->n);
-
-		/* Exit the program with status 98 on failure */
+		} while (head != loop_start);
+		printf("-> [%p] %d\n", (void *)loop_start,
+				loop_start->n);
 		exit(98);
 	}
 
