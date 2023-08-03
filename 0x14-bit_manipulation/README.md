@@ -10,14 +10,14 @@ In this repository, you will find a collection of projects that cover a range of
 
 Explore the projects included in this repository:
 
-1. **[0-binary_to_uint.c]**: Convert a binary string to an unsigned integer.
-2. **[1-print_binary.c]**: Print the binary representation of an integer.
-3. **[2-get_bit.c]**: Get the value of a specific bit at an index.
-4. **[3-set_bit.c]**: Set a specific bit at an index to 1.
-5. **[4-clear_bit.c]**: Clear a specific bit at an index.
-6. **[5-flip_bits.c]**: Calculate the number of bits needed to flip to transform one number into another.
-7. **[100-get_endianness.c]**: Determine the endianness of the system.
-8. **[101-password]**: Cracking a password protected program.
+1. **0-binary_to_uint.c**: Convert a binary string to an unsigned integer.
+2. **1-print_binary.c**: Print the binary representation of an integer.
+3. **2-get_bit.c**: Get the value of a specific bit at an index.
+4. **3-set_bit.c**: Set a specific bit at an index to 1.
+5. **4-clear_bit.c**: Clear a specific bit at an index.
+6. **5-flip_bits.c**: Calculate the number of bits needed to flip to transform one number into another.
+7. **100-get_endianness.c**: Determine the endianness of the system.
+8. **101-password**: Cracking a password protected program.
 
 ## Getting Started
 
