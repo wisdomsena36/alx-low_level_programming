@@ -14,7 +14,7 @@ ssize_t _strlen(const char *s)
 		return (-1);
 
 	len = 0;
-	while (s[len] != '0')
+	while (*s++)
 		++len;
 
 	return (len);
@@ -29,7 +29,7 @@ ssize_t _strlen(const char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t w;
+	ssize_t w = 0;
 	int fd;
 
 	if (!filename)
@@ -40,7 +40,6 @@ int create_file(const char *filename, char *text_content)
 	if (fd < 0)
 		return (-1);
 
-	w = 0;
 	if (text_content)
 		w = write(fd, text_content, _strlen(text_content));
 
