@@ -2,18 +2,18 @@
 
 /**
  * print_dlistint - It prints doubly-linked list.
- * @head: Address of head node.
+ * @h: Address of head node.
  *
  * Return: Size of list.
  */
-size_t print_dlistint(dlistint_t *head)
+size_t print_dlistint(const dlistint_t *h)
 {
 	size_t i = 0;
 
-	while (head)
+	while (h)
 	{
-		printf("%d\n", head->n);
-		head = head->next;
+		printf("%d\n", h->n);
+		h = h->next;
 		i++;
 	}
 	return (i);
