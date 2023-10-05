@@ -30,3 +30,4 @@
 | 4. >>> ht['betty'] | [4-hash_table_get.c](./4-hash_table_get.c) |
 | 5. >>> print(ht) | [5-hash_table_print.c](./5-hash_table_print.c) |
 | 6. >>> del ht | [6-hash_table_delete.c](./6-hash_table_delete.c) |
+| 7. $ht['Betty'] = 'Cool' | [100-sorted_hash_table.c](./100-sorted_hash_table.c) |
